@@ -6,7 +6,7 @@ include "master.php";
 <br>
 <table class="table">
 <?php
-include"conexion.php";
+include "database.php";
 $i=0;
 if($_SESSION["estado"] == "loged") {
 	if($_SESSION["total"] !=0){
