@@ -1,5 +1,5 @@
 <?php 
-include "master.php";
+include "database.php";
 
 $user=$_POST["user"];
 $pass=md5($_POST["pass"]);
