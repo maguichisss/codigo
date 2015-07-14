@@ -2,7 +2,7 @@
 function conectarBaseDeDatos(){
 	global $conexionDB;
 	global $altasbajascambios;
-	$conexionDB = mysqli_connect("localhost", "jardin", "jardin123", "sci");
+	$conexionDB = mysqli_connect("localhost", "kinder", "123456", "kinder");
 
 	
 	if (mysqli_connect_errno()) {

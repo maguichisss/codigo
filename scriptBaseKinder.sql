@@ -10,8 +10,10 @@
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 -- 
--- Base de datos: `sci`
+-- Base de datos: `kinder`
 -- 
+CREATE DATABASE kinder DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
+USE kinder;
 
 -- --------------------------------------------------------
 
@@ -257,18 +259,18 @@ CREATE TABLE `personal` (
 -- 
 
 INSERT INTO `personal` VALUES (18, 'k', 'k', 'goku', 0x30, '2012-12-02', 'gokukk120254ouhh00', 5555555, 1111111, 90875, 1, '1234567890', '0987654321', NULL, NULL);
-INSERT INTO `personal` VALUES (19, 'Garces', 'Brito', 'Mauricio', 0x30, '1989-12-25', 'gabm891225htcrrr04', 1234567890, 987654321, 50260, 2, '2343424', '2323232323', NULL, NULL);
-INSERT INTO `personal` VALUES (20, 'Yahuitl', 'Perez', 'Adriana', 0x31, '1992-02-16', 'yapa920216mtldrh08', 1234567890, 987654321, 90740, 2, '9o09i8u', '4r5t6y7', NULL, NULL);
+INSERT INTO `personal` VALUES (19, 'Garces', 'qwerty', 'Mauricio', 0x30, '1979-02-15', 'gaqm123456hycrgr04', 1234567890, 987654321, 50260, 2, '2343424', '2323232323', NULL, NULL);
+INSERT INTO `personal` VALUES (20, 'Yoli', 'Prado', 'Adriana', 0x31, '1992-02-16', 'yaju900819mtmdth08', 1234567890, 987654321, 90740, 2, '9o09i8u', '4r5t6y7', NULL, NULL);
 INSERT INTO `personal` VALUES (21, 'dominguez', 'tovar', 'edgar', 0x30, '1992-08-15', '', 35446676, 4254678, 65436, 2, 'uyt', 'tyu', NULL, NULL);
 INSERT INTO `personal` VALUES (22, '   qwe', '             regert', 'q', 0x30, '1900-01-01', '123456789012345678', 321, 321, 321, 2, '87687', 'uygut7', NULL, NULL);
 INSERT INTO `personal` VALUES (23, '1', '1', '1', 0x30, '1234-01-10', '123', 12, 1, 1, 2, '1', '1', NULL, NULL);
 INSERT INTO `personal` VALUES (24, 'jose', 'jose', '       pepe', 0x30, '1900-01-01', '13', 123, 1231, 12314, 2, 'ibi', 'bib', NULL, NULL);
 INSERT INTO `personal` VALUES (25, 'jose', 'b', '       pepe', 0x30, '1234-01-01', '123456789012345678', 987, 8798, 76565, 2, 'n987h9', 'm08hn0', NULL, NULL);
 INSERT INTO `personal` VALUES (26, 'a', 'a', 'pepe', 0x30, '1234-01-01', 'q', 234, 445, 234, 2, 'c43r4', 'd34r4', NULL, NULL);
-INSERT INTO `personal` VALUES (27, 'Garces', 'Brito', 'Mauricio Ilhuicamina', 0x30, '1989-01-01', '1234567890oiuytrew', 1233, 1234567890, 50260, 2, '171edgdvgb', '81631tgbdbef', NULL, NULL);
-INSERT INTO `personal` VALUES (28, 'yahuitl', 'perez', 'adriana', 0x31, '1980-01-01', '123456789012345678', 123456789, 123456789, 1234, 2, 'njhjguhu8', 'yey2d277', NULL, NULL);
+INSERT INTO `personal` VALUES (27, 'Garcia', 'Bueno', 'Moctezuma', 0x30, '1989-01-01', '1234567890oiuytrew', 1233, 1234567890, 50260, 2, '171edgdvgb', '81631tgbdbef', NULL, NULL);
+INSERT INTO `personal` VALUES (28, 'gomez', 'ortiz', 'juan', 0x31, '1980-01-01', '123456789012345678', 123456789, 123456789, 1234, 2, 'njhjguhu8', 'yey2d277', NULL, NULL);
 INSERT INTO `personal` VALUES (29, 'o', 'o', 'o', 0x30, '9087-01-01', 'uiuii0887rftvnbjmn', 1234567890, 1234567890, 12345, 2, '09765r6fvu', '8675rfgyukh', NULL, NULL);
-INSERT INTO `personal` VALUES (30, 'jimenez', 'coronel', 'gama', 0x30, '1990-09-24', 'asdfghjki654321234', 23456789, 234567, 23456, 2, '1234', '54321', NULL, NULL);
+INSERT INTO `personal` VALUES (30, 'chapo', 'guzman', 'joaquin', 0x30, '1990-09-24', 'asdfghjki654321234', 23456789, 234567, 23456, 2, '1234', '54321', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -413,3 +415,9 @@ ALTER TABLE `personal`
 -- 
 ALTER TABLE `usuario`
   ADD CONSTRAINT `personal` FOREIGN KEY (`idPersonal`) REFERENCES `personal` (`idPersonal`);
+--
+--
+-- Crear usuario 
+--
+GRANT ALL ON kinder.* TO kinder@localhost identified by '123456';
+

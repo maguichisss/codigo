@@ -1,5 +1,5 @@
 <?php
-$mysqli = mysqli_connect("localhost", "jardin", "jardin123", "sci");
+$mysqli = mysqli_connect("localhost", "kinder", "123456", "kinder");
 
 $sql = "SELECT * FROM usuario WHERE nombre = '".$_POST["user"]."' AND clave = '".$_POST["pass"]."'";
 $res_usu = mysqli_query($mysqli, $sql) or die(mysqli_error($mysqli));
