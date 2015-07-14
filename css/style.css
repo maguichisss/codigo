@@ -1,0 +1,11 @@
+body{
+	background-color: #D9EDF7;
+}
+
+.div_login{
+	height: 500px;
+}
+
+.borderless > tbody > tr > td {
+    border: none;
+}
