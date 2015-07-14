@@ -60,6 +60,7 @@ CREATE TABLE `aviso` (
 INSERT INTO `aviso` VALUES (1, 'buuu', '2012-12-05 00:00:00');
 INSERT INTO `aviso` VALUES (2, 'Por fin funciona esta cosa...', '2012-12-05 04:52:51');
 INSERT INTO `aviso` VALUES (3, 'vhgvv jb', '2012-12-05 11:15:01');
+INSERT INTO `aviso` VALUES (4, 'Por fin en Github, despues de mil anios XD', '2015-07-14 00:18:32');
 
 -- --------------------------------------------------------
 
