@@ -14,18 +14,11 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
 		</li> ";
 }
 
-
-
-
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
+<title>M&uacute;sica</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -54,32 +47,6 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
 	</nav>
 
 	<?php
-		if($_SESSION["estado"] != "loged") {
-	?>
-	<div class="col-sm-3 bg-info div_login" >
-		<form name="login" action="login.php" method="post" class="navbar-form navbar-left">
-			<div class="form-group">
-			<table class="table borderless">
-				<tr><br></tr>
-				<tr>Usuario:<br></tr>
-				<tr>
-					<input class="form-control" name="user" placeholder="Usuario"/>
-				</tr>
-				<tr>Contrase&ntilde;a:<br></tr>
-				<tr>
-					<input class="form-control" type="password" name="pass" placeholder="Contrase&ntilde;a"/>
-					<br><br>
-				</tr>
-				<tr><input type="submit" class="btn btn-default" value="Entrar" /></tr>		
-			</div>
-			</table>					
-		</form>
-		<br>Nuevo? <a href="registro.php" >Registrate!!!</a>
-	</div></div>
-	<?php  
-	} //acaba el if 
-	?>
-	<?php
 	if($_SESSION["estado"] == "loged") {
 	?>
 	<div class="col-sm-3 bg-success div_login">
@@ -104,6 +71,30 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
 		</table>	
 	</div>	
 	<?php
+	}else {
+	?>
+	<div class="col-sm-3 bg-info div_login" >
+		<form name="login" action="login.php" method="post" class="navbar-form navbar-left">
+			<div class="form-group">
+			<table class="table borderless">
+				<tr><br></tr>
+				<tr>Usuario:<br></tr>
+				<tr>
+					<input class="form-control" name="user" placeholder="Usuario"/>
+				</tr>
+				<tr>Contrase&ntilde;a:<br></tr>
+				<tr>
+					<input class="form-control" type="password" name="pass" placeholder="Contrase&ntilde;a"/>
+					<br><br>
+				</tr>
+				<tr><input type="submit" class="btn btn-default" value="Entrar" /></tr>		
+			</div>
+			</table>					
+		</form>
+		<br>Nuevo? <a href="registro.php" >Registrate!!!</a>
+	</div></div>
+	<?php  
 	} //acaba el if 
 	?>
+	
 

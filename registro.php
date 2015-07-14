@@ -9,6 +9,7 @@
 <div>
 <br><br>
 	<form action="registroP.php" method="post">
+		<div class="form-group">
 		<table>
 			<tr>
 				<td></td>
@@ -16,21 +17,22 @@
 			</tr>
 			<tr>
 				<td width="30%" align="right" >Usuario: </td>
-				<td><input class="text" type="text" name="user" value=""/></td>
+				<td><input required class="form-control" type="text" name="user" value=""/></td>
 			</tr>
 			<tr>
 				<td width="30%" align="right" >Contraseña: </td>
-				<td><input class="text" type="text" name="pass" value="" /></td>
+				<td><input required class="form-control" type="password" name="pass" value="" /></td>
 			</tr>
 			<tr>
 				<td width="30%" align="right" >E-mail:</td>
-				<td><input class="text" type="text" name="email" /></td>
+				<td><input class="form-control" type="text" name="email" /></td>
 			</tr>
 			<tr>
 				<td></td>			
-				<td><input class="submit" type="submit" name="registro" value="Registrarse" /></td>
+				<td><input class="btn btn-default" type="submit" name="registro" value="Registrarse" /></td>
 			</tr>
-		</table>	
+		</table>
+		</div>
 	</form>
 <br><br>
 </div>

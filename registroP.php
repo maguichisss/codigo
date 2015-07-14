@@ -1,6 +1,6 @@
 <?php
-include"master.php";
-include "conexion.php";
+session_start(); 
+include "database.php";
 $user=$_POST["user"];
 $pass=md5($_POST["pass"]);
 $email=$_POST["email"];
