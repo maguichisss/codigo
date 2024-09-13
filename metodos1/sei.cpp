@@ -1,26 +1,12 @@
-// septiembre 2011
-/* 
-   Grupo: 2203
-   
-   Castro Villanueva Rubén Getsemani
-   Enciso Vega Jessica Nohemi
-   Garces Brito Mauricio Ilhuicamina
-   Rojas Gomez Ana Cecilia
-   Rosales Quintanar Mariana
-   Sanchez Gutierrez Moises A.
-   Vazquez Negrete Lucero
-   
-*/
-
-
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
 
-int n,i,j,k,cont;
+int n,i,j,k,cont,iter;
 float mat[10][10];
 float iwal[10];
+
+
 
 void matriz()
 {
@@ -35,9 +21,10 @@ void matriz()
     printf("\n\n");
     for(i=0;i<n;i++)
     {
-        printf("\nDame el valor de los iwales  [%d]: ", i+1);
+        printf("\nDame el vector de soluciones  [%d]: ", i+1);
         scanf("%f",&iwal[i]);
     }
+    cont=0;
 }
 
 void edd()
@@ -58,7 +45,7 @@ void edd()
               }
     }
     if(n==cont)
-    metodo();
+    printf("\nEs EDD\n\n");
     else
     {
         printf("\nNo es EDD\n\n");
@@ -74,14 +61,15 @@ void printmat()
             printf(" %f ",mat[i][j]);
         printf("= %f\n",iwal[i]);
     }
-    system("pause");
 }
 
 void metodo()
 {
     int x;
     float mataux[n][n],iwalaux[n], raiz[n], raizaux[n], aux[n][n], ekis;
-    float error[n], errormax, raizmax;
+
+    printf("\Dame el numero de iteraciones: ");
+    scanf("%d",&iter);
     for(i=0; i<n; i++)
     {
         for(j=0; j<n; j++)
@@ -92,69 +80,46 @@ void metodo()
         iwalaux[i] = iwal[i]/mat[i][i];
         raiz[i] = 0;
         raizaux[i] = 0;
-        error[i]=0;
     }
-
-    for(x=0; x<n; x++)
+/*  for(i=0; i<n; i++)
     {
+        for(j=0;j<n;j++)
+            printf(" %f ",mataux[i][j]);
+        printf("= %f\n",iwalaux[i]);
+    }
+*/
+    for(x=0; x<iter; x++)
+    {
+        printf("\n%da iteracion\n",x+1);
         for(i=0; i<n; i++)
         {
             ekis=0;
             for(j=0; j<n; j++)
             {
-                printf(" %f*%f  + ",mataux[i][j],raiz[j]);
+                printf(" %f ",mataux[i][j]);
                 aux[i][j] = mataux[i][j]*raiz[j];
                 ekis += aux[i][j];
             }
-            printf("%f",iwalaux[i]);
-            raizaux[i] = ekis + iwalaux[i];
-            printf(" = %f \n",raizaux[i]);
-
+            raiz[i] = ekis + iwalaux[i];
+            printf("= x%d = %f \n",i+1,raiz[i]);
         }
-
-        for(i=0; i<n; i++)
-        {
-            raiz[i]=raizaux[i];
-            error[i] =  raiz[i] - error[i] ;
-            if(error[i]<0)
-                error[i] = -error[i];
-            printf("ERROR: %f",error[i]);
-        }
-        errormax = error[0];
-        if(raiz[0]<0)
-            raizmax = -raiz[0];
-        else
-            raizmax = raiz[0];
-        for(i=0; i<n; i++)
-        {
-            if(error[i] > errormax)
-                errormax = error[i];
-            if(raiz[i]<0)
-                raizmax = -raiz[i];
-            if(raiz[i] > raizmax)
-                raizmax = raiz[i];
-        }
-        for(i=0; i<n; i++)
-        error[i] = raiz[i];
-        errormax = errormax/raizmax;
-        printf("ERROR: %f\n",errormax);
-
+        printf("\n");
     }
-    system("pause");
+    cont=0;
 }
 
 int main()
 {
     char op;
-    printf("\n\n\t\t++METODO DE JACOBI++\n\n");
-    system("pause");
+    printf("\n\n\t\t\t++METODO DE GAUSS-SEIDEL++\n\n");
+    getchar();
     do
     {
         etiq:
         system("cls");
         printf("\n1.- Introduce matriz");
         printf("\n2.- Imprimir matriz");
-        printf("\n3.- Aplicar el metodo de Jacobi");
+        printf("\n3.- Aplicar metodo de Gauss-Seidel");
         printf("\n4.- Salir");
         printf("\n\nElige una opcion: ");
         scanf("%s",&op);
@@ -167,13 +132,18 @@ int main()
 
             case '2':
                 printmat();
+                system("pause");
             break;
 
             case '3':
                 edd();
+                if(cont==n)
+                metodo();
+                system("pause");
             break;
 
             case '4':
+                printf("\n");
                 exit(1);
             break;
 
