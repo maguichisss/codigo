@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <META NAME="Keywords" CONTENT="UNAM">
+  <meta name="description" content="UNAM">
+  <link rel="shortcut icon" href="">
+  <title>Métodos Numéricos II - UNAM</title>
+
+  <script type="text/javascript" src="tamtexto.js"></script>
+  <script type="text/javascript" src="nav-v.js"></script>
+  <?php 
+    function getFecha(){
+      $meses['01']="enero";
+      $meses['02']="febrero";
+      $meses['03']="marzo";
+      $meses['04']="abril";
+      $meses['05']="mayo";
+      $meses['06']="junio";
+      $meses['07']="julio";
+      $meses['08']="agosto";
+      $meses['09']="septiembre";
+      $meses['10']="octubre";
+      $meses['11']="noviembre";
+      $meses['12']="diciembre";
+
+      $dias['01'] = "1";
+      $dias['02'] = "2";
+      $dias['03'] = "3";
+      $dias['04'] = "4";
+      $dias['05'] = "5";
+      $dias['06'] = "6";
+      $dias['07'] = "7";
+      $dias['08'] = "8";
+      $dias['09'] = "9";
+
+      $dia = date("d");
+      $mes = date("m");
+      $mes = $meses[$mes];
+      $anio = date("Y");
+
+      if($dia < 10)
+      $dia = $dias[$dia];
+
+      $fecha =$dia." de ".$mes." del ".$anio;
+
+      return $fecha;
+    }
+  ?>
+  <link href="estilos-internas.css"rel="stylesheet" type="text/css"/>
+  <link href="nav-v.css" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript" src="mootools.js"></script>
+  <script type="text/javascript" src="interna.js"></script>
+
+  <style type="text/css">
+    <!--
+    .style1 {
+      font-size: 40px;
+      color: #044D8B;
+    }
+    .style2 {
+      color: #90002a;
+      font-weight: bold;
+    }
+    -->
+  </style>
+</head>
+<body>
+<!-- inicia contenedor que centra la página -->
+<div class="contenedor">
+<!-- inicia encabezado -->
+  <div class="encabezado"><a href="">
+    <!--
+    <img src="" alt="" title="" border="0"  /></a>
+    <img src="" width="560" height="103" />
+    -->
+  </div>
+<!-- termina encabezado -->
+
+<!-- inicia navegacion -->
+  <div class="navegacion">
+    <div class="navegacion-inicio">
+      <a href="index.html">
+        <img src="imgs/house.gif" alt="Ir a página principal" title="Ir a página principal" width="16" height="16" border="0"/>
+      </a>
+    </div>
+    <div class="navegacion-fecha"><?php echo getFecha(); ?></div>
+    <div class="navegacion-banderas"></div>  
+  </div>
+<!-- termina navegacion -->
+
+<!--inicia contenido-->
+  <div class="contenido">   
+    <div class="menu-interna">
+      <ul id="navmenu-v"> 
+        <li>
+          <a href="trapecio.html"><h2>Trapecio</h2></a>
+        </li>
+        <li>
+          <a href="simpson13.html"><h2>Simpson 1/3</h2></a>
+        </li>
+        <li>
+          <a href="simpson38.html"><h2>Simpson 3/8</h2></a>
+        </li>
+        <li>
+          <a href="sumatoria.html"><h2>Sumatoria</h2></a>
+        </li>
+        <li>
+          <a href="binomio.html"><h2>Binomio de Newton</h2></a>
+        </li>
+        <li>
+          <a href="diferencias.html"><h2>Diferencias Divididas</h2></a>
+        </li>
+        <li>
+          <a href="imagenes.html"><h2>Imagenes</h2></a>
+        </li>
+      </ul>
+    </div>  
+    <div class="info-estudiantes">
+      <div class="info-contenido" id="contenido">
+        <div class="noticias">
+          <div id="tamano">
+            <a href="javascript:;" onclick="interna.cambiarTamanioLetra('normal');" title="Texto normal">
+              <img src="imgs/letra2.gif" border="0" height="21" width="20">       
+            </a>
+            <a href="javascript:;" onclick="interna.cambiarTamanioLetra('grande');" title="Texto más grande">
+              <img src="imgs/letra3.gif" border="0" height="21" width="20">       
+            </a>
+          </div>
+          <p> </p>
+          <div class="info-contenido" id="contenido-central"> 
+            <h1>Método del trapecio</h1>
+            <p>
+              Método para encontrar el área aproximada bajo una curva, dividiéndola en una serie de secciones con forma trapezoidal, con valores igualmente espaciados de x, con bases que descansan en el eje x, y sumando después las áreas de todos los trapecios.
+            </p>
+            <p>
+              A continuación applet que utiliza dicho método, se tienen cuatro funciones a escoger se da el punto inicial y final de la función, y el intervalo(h, altura del trapecio).
+            </p>
+            <p>
+              <APPLET codebase="classes" code="metodos/trapecio.class" width=250 height=250 ALIGN = middle></APPLET>
+              <img src="imgs/trapecio.jpg" alt="Trapecio"  align="middle" />
+            </p>
+          </div>       
+        </div>
+        <p>&nbsp;</p> 
+      <br />
+      </div>
+    </div>
+  </div>
+<!-- termina contenido -->
+   
+<!--inicia pie banners y pie derechos-->
+  <div class="pie-banners"></div>
+  <div class="pie-derechos">
+    <div>
+    </div>
+  </div>
+<!--termina pie banners y pie derechos-->
+</div>
+<!--termina contenedor-->
+
+</body>
+</html>
